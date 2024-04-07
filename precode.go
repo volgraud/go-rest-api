@@ -78,7 +78,7 @@ func getTaskId(w http.ResponseWriter, r *http.Request) {
 
 	task, ok := tasks[id]
 	if !ok {
-		http.Error(w, "Not found task with id", http.StatusNoContent)
+		http.Error(w, "Нет задачи с указанным id", http.StatusNoContent)
 		return
 	}
 
@@ -98,7 +98,7 @@ func deleteTaskId(w http.ResponseWriter, r *http.Request) {
 
 	_, ok := tasks[id]
 	if !ok {
-		http.Error(w, "Not found task with id", http.StatusBadRequest)
+		http.Error(w, "Нет задачи с указанным id", http.StatusBadRequest)
 		return
 	}
 	delete(tasks, id)
